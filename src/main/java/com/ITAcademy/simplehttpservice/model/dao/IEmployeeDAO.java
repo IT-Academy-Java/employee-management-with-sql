@@ -9,18 +9,16 @@ import java.util.List;
 @Component
 public interface IEmployeeDAO {
 
-    // CRUD Methods
-
-    // Create
+    // Create an employee
     public void create(Employee employee);
 
-    // Read
+    // List all employees
     public List<Employee> findAll();
 
-    // Update
+    // Find employee by id
     public Employee findOne(Long id);
 
-    // Delete
+    // Delete an employee by id
     public void delete(Long id);
 
 }
