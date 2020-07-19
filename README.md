@@ -1,7 +1,7 @@
 # Employee Management
 
 ## Routes
-# User
+# Employee
 | Name                  | Method | Endpoint                           | Description                                           | Body                          |
 | --------------------  | ------ | ---------------------------------  | ---------------------------------------------------   | ----------------------------- |
 | List                  | GET    | http://localhost:8080/employees    | Show landing page with 2 options:login/register       |                               |
