@@ -48,48 +48,4 @@ public class EmployeerController {
         iEmployeeDAO.delete(id);
         return new ResponseEntity<>(Employee, HttpStatus.OK);
     }
-
-   /** @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String list(Model model){
-        model.addAttribute("title", "Employees list");
-        model.addAttribute("employees", iEmployeeDAO.findAll());
-        return "/list";
-    }
-
-    @RequestMapping(value="/create")
-    public String create(Map<String, Object> model){
-        Employee employee = new Employee();
-        model.put("employee", employee);
-        model.put("title", "Create Employee");
-        return "/form";
-    }
-
-    @RequestMapping(value="/create", method = RequestMethod.POST)
-    public String save(Employee employee){
-        iEmployeeDAO.create(employee);
-        return "redirect:/list";
-    }
-
-    @RequestMapping(value = "/edit/{id}")
-    public String edit(@PathVariable(value = "id") Long id, Map<String, Object> model){
-        Employee employee = null;
-        if(id > 0){
-            employee = iEmployeeDAO.findOne(id);
-        } else{
-            return "redirect:/list";
-        }
-
-        model.put("employee", employee);
-        model.put("title", "Edit employee");
-        return "form";
-    }
-
-    @RequestMapping(value = "/delete/{id}")
-    public String delete(@PathVariable(value = "id") Long id){
-        if(id > 0){
-            iEmployeeDAO.delete(id);
-        }
-        return "redirect:/list";
-    }
-    */
 }
