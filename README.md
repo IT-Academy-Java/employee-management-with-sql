@@ -1,5 +1,14 @@
 # Employee Management
-![Demo-CRUD](./src/main/resources/static/demo-crud.png)
+
+## Routes
+# User
+| Name                  | Method | Endpoint                           | Description                                           | Body                          |
+| --------------------  | ------ | ---------------------------------  | ---------------------------------------------------   | ----------------------------- |
+| List                  | GET    | http://localhost:8080/employees    | Show landing page with 2 options:login/register       |                               |
+| Delete                | DELETE | http://localhost:8080/delete/{id}  | Delete an employee by id                              |                               | 
+| Find by id            | GET    | http://localhost:8080/employee/{id}| Find employee by id                                   |                               | 
+| Create employee       | POST   | http://localhost:8080/create       | Create an employee                                    | {name, surname, job, createAt}| 
+| Create employee       | POST   | http://localhost:8080/create       | Update an employee                                    | {id, name, surname, job, createAt}| 
 
 ## Objectius
 - Conèixer un servei HTTP al complet 
