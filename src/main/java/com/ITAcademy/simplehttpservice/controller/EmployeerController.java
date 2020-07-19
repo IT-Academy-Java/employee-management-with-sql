@@ -42,7 +42,7 @@ public class EmployeerController {
     }
 
     // Delete employee by id
-    @RequestMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Employee> delete(@PathVariable(value = "id") Long id) {
         Employee Employee = iEmployeeDAO.findOne(id);
         iEmployeeDAO.delete(id);
