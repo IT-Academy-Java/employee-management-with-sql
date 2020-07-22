@@ -1,6 +1,7 @@
 package com.ITAcademy.simplehttpservice.model.dao;
 
 import com.ITAcademy.simplehttpservice.model.entity.Employee;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -37,12 +38,14 @@ public class EmployeeDAOImplement implements IEmployeeDAO{
     }
 
     @Override
-    @Transactional
-    public void delete(Long id) {
-        // get employee to delete
-        //Employee employee = findOne(id);
-        em.remove(findOne(id));
+    @Transactional(readOnly = true)
+    public List<Employee> findByJob(String job) {
+        return em.createQuery("from Employee e where e.job =:custJob").setParameter("custJob", job).getResultList();
     }
 
-
+    @Override
+    @Transactional
+    public void delete(Long id) {
+        em.remove(findOne(id));
+    }
 }
